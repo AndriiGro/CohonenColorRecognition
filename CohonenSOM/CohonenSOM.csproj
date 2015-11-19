@@ -95,6 +95,12 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CohonenSOM.Services\CohonenSOM.Services.csproj">
+      <Project>{52728cec-0712-40e2-8d2a-a13c063a921a}</Project>
+      <Name>CohonenSOM.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

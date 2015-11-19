@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip_Main = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.cohonenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teachNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip_Main.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip_Main
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(20, 30);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(430, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.cohonenToolStripMenuItem});
+            this.menuStrip_Main.Location = new System.Drawing.Point(20, 30);
+            this.menuStrip_Main.Name = "menuStrip_Main";
+            this.menuStrip_Main.Size = new System.Drawing.Size(430, 24);
+            this.menuStrip_Main.TabIndex = 0;
+            this.menuStrip_Main.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -57,21 +60,36 @@
             this.loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
             this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadImageToolStripMenuItem.Text = "Load image";
+            this.loadImageToolStripMenuItem.Click += new System.EventHandler(this.loadImageToolStripMenuItem_Click);
+            // 
+            // cohonenToolStripMenuItem
+            // 
+            this.cohonenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.teachNetworkToolStripMenuItem});
+            this.cohonenToolStripMenuItem.Name = "cohonenToolStripMenuItem";
+            this.cohonenToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.cohonenToolStripMenuItem.Text = "Cohonen";
+            // 
+            // teachNetworkToolStripMenuItem
+            // 
+            this.teachNetworkToolStripMenuItem.Name = "teachNetworkToolStripMenuItem";
+            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.teachNetworkToolStripMenuItem.Text = "Teach network";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 339);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip_Main);
             this.DisplayHeader = false;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip_Main;
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Cohonen SOM";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip_Main.ResumeLayout(false);
+            this.menuStrip_Main.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,8 +97,10 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip_Main;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cohonenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem teachNetworkToolStripMenuItem;
     }
 }

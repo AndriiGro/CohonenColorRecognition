@@ -17,5 +17,10 @@ namespace CohonenSOM
         {
             InitializeComponent();
         }
+
+        private void loadImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
