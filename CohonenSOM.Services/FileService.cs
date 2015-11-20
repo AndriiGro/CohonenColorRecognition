@@ -35,7 +35,7 @@ namespace CohonenSOM.Services
             catch (System.IO.FileNotFoundException)
             {
                 MessageBox.Show("There was an error opening the bitmap." +
-            "Please check the path.");
+                                "Please check the path.");
             }
 
             return imageToReturn;
