@@ -26,7 +26,7 @@ namespace CohonenSOM.Services
 
         public Bitmap GetBitmapFromPath(string imagePath)
         {
-            Bitmap imageToReturn = new Bitmap(0, 0);
+            var imageToReturn = new Bitmap(1, 1);
 
             try
             {
@@ -39,6 +39,16 @@ namespace CohonenSOM.Services
             }
 
             return imageToReturn;
+        }
+
+        public Bitmap GetBitmapFileFromDisk()
+        {
+            return GetBitmapFromPath(GetImageFilePath());
+        }
+
+        public void SaveBitmapFileToNetworkParameters()
+        {
+            NetworkParameters.LearningBitmapFromDisk = GetBitmapFileFromDisk();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace CohonenSOM.Services
     {
         public Color[,] GetBitmapImageColourMap(Bitmap image)
         {
-            Color[,] colourMap = new Color[image.Width, image.Height];
+            var colourMap = new Color[image.Width, image.Height];
 
             for (int x = 0; x < image.Width; x++)
             {
