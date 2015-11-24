@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace CohonenSOM.Services
+﻿namespace CohonenSOM.Services
 {
     public class ScaledColor
     {
@@ -15,13 +13,11 @@ namespace CohonenSOM.Services
             Blue = b / 255.0;
         }
 
-        public Color ConvertScaledColorToColor(ScaledColor scaledColor)
+        public ScaledColor(double r, double g, double b)
         {
-            int r = (int)scaledColor.Red * 255;
-            int g = (int)scaledColor.Green * 255;
-            int b = (int)scaledColor.Blue * 255;
-
-            return Color.FromArgb(r, g, b);
+            Red = r;
+            Green = g;
+            Blue = b;
         }
     }
 }

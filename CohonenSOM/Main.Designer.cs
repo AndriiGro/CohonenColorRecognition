@@ -33,7 +33,9 @@
             this.loadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cohonenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox_NetworkGridView = new System.Windows.Forms.PictureBox();
             this.menuStrip_Main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_NetworkGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip_Main
@@ -43,7 +45,7 @@
             this.cohonenToolStripMenuItem});
             this.menuStrip_Main.Location = new System.Drawing.Point(20, 30);
             this.menuStrip_Main.Name = "menuStrip_Main";
-            this.menuStrip_Main.Size = new System.Drawing.Size(430, 24);
+            this.menuStrip_Main.Size = new System.Drawing.Size(398, 24);
             this.menuStrip_Main.TabIndex = 0;
             this.menuStrip_Main.Text = "menuStrip1";
             // 
@@ -75,12 +77,23 @@
             this.teachNetworkToolStripMenuItem.Name = "teachNetworkToolStripMenuItem";
             this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.teachNetworkToolStripMenuItem.Text = "Teach network";
+            this.teachNetworkToolStripMenuItem.Click += new System.EventHandler(this.teachNetworkToolStripMenuItem_Click);
+            // 
+            // pictureBox_NetworkGridView
+            // 
+            this.pictureBox_NetworkGridView.BackColor = System.Drawing.Color.Gold;
+            this.pictureBox_NetworkGridView.Location = new System.Drawing.Point(20, 66);
+            this.pictureBox_NetworkGridView.Name = "pictureBox_NetworkGridView";
+            this.pictureBox_NetworkGridView.Size = new System.Drawing.Size(400, 400);
+            this.pictureBox_NetworkGridView.TabIndex = 1;
+            this.pictureBox_NetworkGridView.TabStop = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 339);
+            this.ClientSize = new System.Drawing.Size(438, 481);
+            this.Controls.Add(this.pictureBox_NetworkGridView);
             this.Controls.Add(this.menuStrip_Main);
             this.DisplayHeader = false;
             this.MainMenuStrip = this.menuStrip_Main;
@@ -90,6 +103,7 @@
             this.Text = "Cohonen SOM";
             this.menuStrip_Main.ResumeLayout(false);
             this.menuStrip_Main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_NetworkGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +116,6 @@
         private System.Windows.Forms.ToolStripMenuItem loadImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cohonenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teachNetworkToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox_NetworkGridView;
     }
 }
