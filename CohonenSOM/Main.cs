@@ -20,9 +20,7 @@ namespace CohonenSOM
 
         private void teachNetworkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _cohonenNetwork.InitNetworkGrid();
-            _cohonenNetwork.InitNetworkGridView();
-            _cohonenNetwork.SetNetworkGridColors();
+            _cohonenNetwork.SetupNetworkWithRandoms();
             pictureBox_NetworkGridView.Image = _cohonenNetwork.GetCohonenNetworkImage();
         }
     }

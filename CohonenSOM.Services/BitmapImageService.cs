@@ -15,6 +15,7 @@ namespace CohonenSOM.Services
                     colourMap[x, y] = image.GetPixel(x, y);
                 }
             }
+
             return colourMap;
         }
     }

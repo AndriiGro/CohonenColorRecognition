@@ -30,6 +30,5 @@ namespace CohonenSOM
         {
             MessageBox.Show(@"Application_ThreadException: " + e.Exception.Message);
         }
-
     }
 }

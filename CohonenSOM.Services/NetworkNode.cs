@@ -6,8 +6,8 @@ namespace CohonenSOM.Services
 {
     public class NetworkNode
     {
-        private double[] _nodeWeights = new double[3];
         private readonly Point _nodePosition;
+        private double[] _nodeWeights = new double[3];
 
         public NetworkNode(int xPosition, int yPosition)
         {

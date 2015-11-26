@@ -23,17 +23,19 @@ namespace CohonenSOM.Graphics
                 {
                     using (var g = System.Drawing.Graphics.FromImage(networkImage))
                     {
-                        using (var brush = new SolidBrush(GridParams.NetworkGridView[i, j].CellColor))
+                        using (var brush = new SolidBrush(
+                            GridParams.NetworkGridView[i, j].CellColor))
                         {
                             g.FillRectangle(brush,
-                                i*GridParams.WideOfCellOnGridInPixels,
-                                j*GridParams.WideOfCellOnGridInPixels,
+                                i * GridParams.WideOfCellOnGridInPixels,
+                                j * GridParams.WideOfCellOnGridInPixels,
                                 GridParams.WideOfCellOnGridInPixels,
                                 GridParams.WideOfCellOnGridInPixels);
                         }
                     }
                 }
             }
+
             return networkImage;
         }
     }
