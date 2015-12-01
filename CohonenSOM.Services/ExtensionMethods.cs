@@ -12,5 +12,16 @@ namespace CohonenSOM.Services
 
             return Color.FromArgb(r, g, b);
         }
+
+        public static double[] ConvertColorsToArray(this ScaledColor scaledColor)
+        {
+            var colorsArray = new double[3];
+
+            colorsArray[0] = scaledColor.Red;
+            colorsArray[1] = scaledColor.Green;
+            colorsArray[2] = scaledColor.Blue;
+
+            return colorsArray;
+        }
     }
 }

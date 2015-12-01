@@ -11,7 +11,8 @@ namespace CohonenSOM.Services
 
         public CohonenNetwork()
         {
-            _networkRadius = Math.Max(NetworkConsts.NetworkHeight,
+            _networkRadius = Math.Max(
+                NetworkConsts.NetworkHeight,
                 NetworkConsts.NetworkWidth) / 2.0;
         }
 
@@ -34,9 +35,28 @@ namespace CohonenSOM.Services
             {
                 return NetworkConsts.TeachingFinished;
             }
-            
-            double influenceRadius = CulculateNodeInfluenceRadius(_networkRadius, NetworkParameters.IterationsDone,
-                NetworkParameters.IterationsQuantity);
+
+            for (int x = 0; x < NetworkParameters.LearningBitmapFromDisk.Width; x++)
+            {
+                for (int y = 0; y < NetworkParameters.LearningBitmapFromDisk.Height; y++)
+                {
+                    Color currentPixelColor =
+                        NetworkParameters.LearningBitmapFromDisk.GetPixel(x, y);
+
+                    var bestMatchingUnitPositionAndColors =
+                        CulculateBestMatchingUnit(currentPixelColor);
+
+                    double influenceRadius = CulculateNodeInfluenceRadius(
+                        _networkRadius,
+                        NetworkParameters.IterationsDone,
+                        NetworkParameters.IterationsQuantity);
+
+                    AdjustNetworkWeights(
+                        bestMatchingUnitPositionAndColors.Item1, 
+                        bestMatchingUnitPositionAndColors.Item2, 
+                        influenceRadius);
+                }
+            }
 
             return true;
         }
@@ -77,13 +97,72 @@ namespace CohonenSOM.Services
             }
         }
 
-        private double CulculateNodeInfluenceRadius(double initialRadius,
+        private double CulculateNodeInfluenceRadius(
+            double initialRadius,
             int iterationsDone,
             int iterationsQuantity)
         {
             double radius = initialRadius * (iterationsDone / (double)iterationsQuantity);
 
             return radius;
+        }
+
+        private Tuple<Point, double[]> CulculateBestMatchingUnit(Color color)
+        {
+            var bestMatchingUnitCoordinates = new Point();
+            var scaledColor = new ScaledColor(color);
+            double[] colorsArray = scaledColor.ConvertColorsToArray();
+
+            double lowestDistance = double.MaxValue;
+
+            for (int i = 0; i < NetworkParameters.CohonenNetworkNodes.GetLength(0); i++)
+            {
+                for (int j = 0; j < NetworkParameters.CohonenNetworkNodes.GetLength(1); j++)
+                {
+                    double distance = NetworkParameters.CohonenNetworkNodes[i, j]
+                        .GetEuclideanDistance(colorsArray);
+
+                    if (!(distance < lowestDistance))
+                    {
+                        continue;
+                    }
+
+                    lowestDistance = distance;
+                    bestMatchingUnitCoordinates = new Point(i, j);
+                }
+            }
+
+            return new Tuple<Point, double[]>(bestMatchingUnitCoordinates, colorsArray);
+        }
+
+        private void AdjustNetworkWeights(
+            Point bestMatchingUnit, 
+            double[] colorsArray, 
+            double influenceRadius)
+        {
+            for (int x = 0; x < NetworkParameters.CohonenNetworkNodes.GetLength(0); x++)
+            {
+                for (int y = 0; y < NetworkParameters.CohonenNetworkNodes.GetLength(1); y++)
+                {
+                    double distanceToBestMatchingUnit =
+                        Math.Sqrt((bestMatchingUnit.X - x) * (bestMatchingUnit.X - x) 
+                        + (bestMatchingUnit.Y - y) * (bestMatchingUnit.Y - y));
+
+                    if (distanceToBestMatchingUnit > influenceRadius)
+                    {
+                        continue;
+                    }
+
+                    double learningRate = NetworkConsts.InitialLearningRate * 
+                        (NetworkParameters.IterationsDone / 
+                        (double)NetworkParameters.IterationsQuantity);
+
+                    double influence = distanceToBestMatchingUnit / influenceRadius;
+
+                    NetworkParameters.CohonenNetworkNodes[x, y]
+                        .AdjustWeights(colorsArray, learningRate, influence);
+                }
+            }
         }
     }
 }

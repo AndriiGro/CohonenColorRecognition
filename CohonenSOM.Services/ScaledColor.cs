@@ -1,4 +1,6 @@
-﻿namespace CohonenSOM.Services
+﻿using System.Drawing;
+
+namespace CohonenSOM.Services
 {
     public class ScaledColor
     {
@@ -6,11 +8,11 @@
         public double Green;
         public double Blue;
 
-        public ScaledColor(int r, int g, int b)
+        public ScaledColor(Color color)
         {
-            Red = r / 255.0;
-            Green = g / 255.0;
-            Blue = b / 255.0;
+            Red = color.R / 255.0;
+            Green = color.G / 255.0;
+            Blue = color.B / 255.0;
         }
 
         public ScaledColor(double r, double g, double b)

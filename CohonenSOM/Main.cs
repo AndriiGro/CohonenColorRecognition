@@ -18,6 +18,7 @@ namespace CohonenSOM
             _fileService.SaveBitmapFileToNetworkParameters();
         }
 
+        // TODO: Check of image to teach was loaded so far
         private void teachNetworkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _cohonenNetwork.SetupNetworkWithRandoms();

@@ -5,6 +5,7 @@
         public const int NetworkWidth = 40;
         public const int NetworkHeight = 40;
         public const bool TeachingFinished = true;
-        public const bool TeachingIsNotFinished = false; 
+        public const bool TeachingIsNotFinished = false;
+        public const double InitialLearningRate = 0.1;
     }
 }
