@@ -38,10 +38,13 @@ namespace CohonenSOM.Services
             return Math.Sqrt(distance);
         }
 
-        // TODO: using input data adjust weights
-        public void AdjustWeights(double[] colorArray, double learningRate, double influence)
+        public void AdjustWeights(double[] targetColorsArray, double learningRate, double influence)
         {
-            
+            for (int i = 0; i < targetColorsArray.Length; i++)
+            {
+                _nodeWeights[i] += 
+                    learningRate * influence * (targetColorsArray[i] - _nodeWeights[i]);
+            }
         }
 
         private void InitializeNodeWeightWithRandom()

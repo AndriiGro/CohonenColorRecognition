@@ -27,9 +27,9 @@ namespace CohonenSOM.Services
         {
             return _gridViewService.GetNetworkGridAsBitmap();
         }
-
-        // TODO: implement training epoch
-        public bool RunNetworkTrainingEpoch(ScaledColor dataScaledColor)
+        
+        // TODO: log network data for every epoch
+        public bool RunNetworkTrainingEpoch()
         {
             if (NetworkParameters.IterationsDone == NetworkParameters.IterationsQuantity)
             {
@@ -43,7 +43,7 @@ namespace CohonenSOM.Services
                     Color currentPixelColor =
                         NetworkParameters.LearningBitmapFromDisk.GetPixel(x, y);
 
-                    var bestMatchingUnitPositionAndColors =
+                    Tuple<Point, double[]> bestMatchingUnitPositionAndColors =
                         CulculateBestMatchingUnit(currentPixelColor);
 
                     double influenceRadius = CulculateNodeInfluenceRadius(
@@ -58,7 +58,9 @@ namespace CohonenSOM.Services
                 }
             }
 
-            return true;
+            NetworkParameters.IterationsDone++;
+
+            return NetworkConsts.TeachingIsNotFinished;
         }
 
         private void SetNetworkGridColors()
@@ -102,7 +104,8 @@ namespace CohonenSOM.Services
             int iterationsDone,
             int iterationsQuantity)
         {
-            double radius = initialRadius * (iterationsDone / (double)iterationsQuantity);
+            double radius = initialRadius * 
+                ((iterationsQuantity - iterationsDone) / (double)iterationsQuantity);
 
             return radius;
         }
@@ -137,7 +140,7 @@ namespace CohonenSOM.Services
 
         private void AdjustNetworkWeights(
             Point bestMatchingUnit, 
-            double[] colorsArray, 
+            double[] targetColorsArray, 
             double influenceRadius)
         {
             for (int x = 0; x < NetworkParameters.CohonenNetworkNodes.GetLength(0); x++)
@@ -153,14 +156,15 @@ namespace CohonenSOM.Services
                         continue;
                     }
 
-                    double learningRate = NetworkConsts.InitialLearningRate * 
-                        (NetworkParameters.IterationsDone / 
+                    double learningRate = 
+                        NetworkConsts.InitialLearningRate * 
+                        ((NetworkParameters.IterationsQuantity - NetworkParameters.IterationsDone) / 
                         (double)NetworkParameters.IterationsQuantity);
 
                     double influence = distanceToBestMatchingUnit / influenceRadius;
 
                     NetworkParameters.CohonenNetworkNodes[x, y]
-                        .AdjustWeights(colorsArray, learningRate, influence);
+                        .AdjustWeights(targetColorsArray, learningRate, influence);
                 }
             }
         }

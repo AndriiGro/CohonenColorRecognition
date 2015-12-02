@@ -34,6 +34,8 @@
             this.cohonenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox_NetworkGridView = new System.Windows.Forms.PictureBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel_IterationsDone = new MetroFramework.Controls.MetroLabel();
             this.menuStrip_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_NetworkGridView)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +62,7 @@
             // loadImageToolStripMenuItem
             // 
             this.loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
-            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.loadImageToolStripMenuItem.Text = "Load image";
             this.loadImageToolStripMenuItem.Click += new System.EventHandler(this.loadImageToolStripMenuItem_Click);
             // 
@@ -75,7 +77,7 @@
             // teachNetworkToolStripMenuItem
             // 
             this.teachNetworkToolStripMenuItem.Name = "teachNetworkToolStripMenuItem";
-            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.teachNetworkToolStripMenuItem.Text = "Teach network";
             this.teachNetworkToolStripMenuItem.Click += new System.EventHandler(this.teachNetworkToolStripMenuItem_Click);
             // 
@@ -88,11 +90,31 @@
             this.pictureBox_NetworkGridView.TabIndex = 1;
             this.pictureBox_NetworkGridView.TabStop = false;
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 469);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(99, 19);
+            this.metroLabel1.TabIndex = 2;
+            this.metroLabel1.Text = "Iterations done:";
+            // 
+            // metroLabel_IterationsDone
+            // 
+            this.metroLabel_IterationsDone.AutoSize = true;
+            this.metroLabel_IterationsDone.Location = new System.Drawing.Point(128, 469);
+            this.metroLabel_IterationsDone.Name = "metroLabel_IterationsDone";
+            this.metroLabel_IterationsDone.Size = new System.Drawing.Size(16, 19);
+            this.metroLabel_IterationsDone.TabIndex = 3;
+            this.metroLabel_IterationsDone.Text = "0";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 481);
+            this.ClientSize = new System.Drawing.Size(438, 492);
+            this.Controls.Add(this.metroLabel_IterationsDone);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox_NetworkGridView);
             this.Controls.Add(this.menuStrip_Main);
             this.DisplayHeader = false;
@@ -117,5 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem cohonenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teachNetworkToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox_NetworkGridView;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel_IterationsDone;
     }
 }

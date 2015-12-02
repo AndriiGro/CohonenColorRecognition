@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using CohonenSOM.Services;
 using MetroFramework.Forms;
 
@@ -23,6 +24,13 @@ namespace CohonenSOM
         {
             _cohonenNetwork.SetupNetworkWithRandoms();
             pictureBox_NetworkGridView.Image = _cohonenNetwork.GetCohonenNetworkImage();
+            MessageBox.Show(@"Network initialization finished");
+
+            while (!_cohonenNetwork.RunNetworkTrainingEpoch())
+            {
+                pictureBox_NetworkGridView.Image = _cohonenNetwork.GetCohonenNetworkImage();
+                metroLabel_IterationsDone.Text = NetworkParameters.IterationsDone.ToString();
+            }
         }
     }
 }

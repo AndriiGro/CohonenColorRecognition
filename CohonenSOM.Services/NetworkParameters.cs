@@ -4,7 +4,7 @@ namespace CohonenSOM.Services
 {
     public static class NetworkParameters
     {
-        public static int IterationsQuantity = 1;
+        public static int IterationsQuantity = 10;
         public static int IterationsDone = 0;
         public static string PathToLearningData = string.Empty;
         public static Bitmap LearningBitmapFromDisk = new Bitmap(1, 1);
