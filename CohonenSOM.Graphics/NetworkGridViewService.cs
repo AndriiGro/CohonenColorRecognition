@@ -7,8 +7,8 @@ namespace CohonenSOM.Graphics
     {
         public void SetCellColor(int xPostion, int yPosition, Color color)
         {
-            GridParams.
-                NetworkGridView[xPostion, yPosition].CellColor = color;
+            GridParams
+                .NetworkGridView[xPostion, yPosition].CellColor = color;
         }
 
         public Bitmap GetNetworkGridAsBitmap()
@@ -26,7 +26,8 @@ namespace CohonenSOM.Graphics
                         using (var brush = new SolidBrush(
                             GridParams.NetworkGridView[i, j].CellColor))
                         {
-                            g.FillRectangle(brush,
+                            g.FillRectangle(
+                                brush,
                                 i * GridParams.WideOfCellOnGridInPixels,
                                 j * GridParams.WideOfCellOnGridInPixels,
                                 GridParams.WideOfCellOnGridInPixels,

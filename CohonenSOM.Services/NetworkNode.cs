@@ -22,6 +22,7 @@ namespace CohonenSOM.Services
             {
                 return;
             }
+
             _nodeWeights = weights;
         }
 

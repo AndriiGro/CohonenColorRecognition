@@ -9,6 +9,7 @@ namespace CohonenSOM
     {
         private readonly FileService _fileService = new FileService();
         private readonly CohonenNetwork _cohonenNetwork = new CohonenNetwork();
+
         public Main()
         {
             InitializeComponent();

@@ -11,6 +11,7 @@ namespace CohonenSOM.Services
         public static NetworkNode[,] CohonenNetworkNodes = new NetworkNode[
             NetworkConsts.NetworkWidth, 
             NetworkConsts.NetworkHeight];
+
         public static Point CurrentPosition = new Point(0, 0);
     }
 }

@@ -11,7 +11,7 @@ namespace CohonenSOM.Services
         private static RandomNumberGenerator _r;
 
         /// <summary>
-        /// Creates an instance of the default implementation of a cryptographic random number generator that can be used to generate random data.
+        /// Initializes a new instance of the default implementation of a cryptographic random number generator that can be used to generate random data.
         /// </summary>
         public CryptoRandom()
         {
@@ -21,7 +21,7 @@ namespace CohonenSOM.Services
         /// <summary>
         /// Fills the elements of a specified array of bytes with random numbers.
         /// </summary>
-        ///<param name="buffer">An array of bytes to contain random numbers.</param>
+        /// <param name="buffer">An array of bytes to contain random numbers.</param>
         public override void GetBytes(byte[] buffer)
         {
             _r.GetBytes(buffer);
