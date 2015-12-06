@@ -62,7 +62,7 @@
             // loadImageToolStripMenuItem
             // 
             this.loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
-            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadImageToolStripMenuItem.Text = "Load image";
             this.loadImageToolStripMenuItem.Click += new System.EventHandler(this.loadImageToolStripMenuItem_Click);
             // 
@@ -76,8 +76,9 @@
             // 
             // teachNetworkToolStripMenuItem
             // 
+            this.teachNetworkToolStripMenuItem.Enabled = false;
             this.teachNetworkToolStripMenuItem.Name = "teachNetworkToolStripMenuItem";
-            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.teachNetworkToolStripMenuItem.Text = "Teach network";
             this.teachNetworkToolStripMenuItem.Click += new System.EventHandler(this.teachNetworkToolStripMenuItem_Click);
             // 

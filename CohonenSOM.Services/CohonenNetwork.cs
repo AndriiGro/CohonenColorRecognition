@@ -27,8 +27,7 @@ namespace CohonenSOM.Services
         {
             return _gridViewService.GetNetworkGridAsBitmap();
         }
-        
-        // TODO: log network data for every epoch
+
         public bool RunNetworkTrainingEpoch()
         {
             if (NetworkParameters.IterationsDone == NetworkParameters.IterationsQuantity)
@@ -57,6 +56,8 @@ namespace CohonenSOM.Services
                         influenceRadius);
                 }
             }
+
+            SetNetworkGridColors();
 
             NetworkParameters.IterationsDone++;
 

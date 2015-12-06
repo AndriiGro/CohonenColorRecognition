@@ -7,7 +7,6 @@ namespace CohonenSOM.Services
     {
         public string GetImageFilePath()
         {
-            string filePath = null;
             var openFileDialog = new OpenFileDialog
             {
                 CheckFileExists = true,
@@ -16,10 +15,10 @@ namespace CohonenSOM.Services
                 Filter = "Bitmap image file (*.bmp)|*.bmp"
             };
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filePath = openFileDialog.FileName;
-            }
+            if (openFileDialog.ShowDialog() != DialogResult.OK) { return null;}
+
+            string filePath = openFileDialog.FileName;
+            NetworkParameters.PathToLearningData = filePath;
 
             return filePath;
         }

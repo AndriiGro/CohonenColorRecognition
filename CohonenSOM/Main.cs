@@ -18,9 +18,9 @@ namespace CohonenSOM
         private void loadImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _fileService.SaveBitmapFileToNetworkParameters();
+            teachNetworkToolStripMenuItem.Enabled = true;
         }
 
-        // TODO: Check if image to teach was loaded so far
         private void teachNetworkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _cohonenNetwork.SetupNetworkWithRandoms();
@@ -31,6 +31,8 @@ namespace CohonenSOM
             {
                 pictureBox_NetworkGridView.Image = _cohonenNetwork.GetCohonenNetworkImage();
                 metroLabel_IterationsDone.Text = NetworkParameters.IterationsDone.ToString();
+                pictureBox_NetworkGridView.Refresh();
+                metroLabel_IterationsDone.Refresh();
             }
         }
     }
