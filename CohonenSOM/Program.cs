@@ -23,12 +23,14 @@ namespace CohonenSOM
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            MessageBox.Show(@"CurrentDomain_UnhandledException: " + e.ExceptionObject);
+            MessageBox.Show(@"CurrentDomain_UnhandledException: " + e.ExceptionObject,
+                @"Unhandled exception");
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            MessageBox.Show(@"Application_ThreadException: " + e.Exception.Message);
+            MessageBox.Show(@"Application_ThreadException: " + e.Exception.Message,
+                @"Unhandled exception");
         }
     }
 }

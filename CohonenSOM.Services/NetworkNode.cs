@@ -16,16 +16,6 @@ namespace CohonenSOM.Services
             InitializeNodeWeightWithRandom();
         }
 
-        public void SetNodeWeights(double[] weights)
-        {
-            if (_nodeWeights.Length != weights.Length)
-            {
-                return;
-            }
-
-            _nodeWeights = weights;
-        }
-
         public double[] GetNodeWeights()
         {
             return _nodeWeights;

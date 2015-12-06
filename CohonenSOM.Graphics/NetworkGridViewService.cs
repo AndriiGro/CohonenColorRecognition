@@ -7,8 +7,7 @@ namespace CohonenSOM.Graphics
     {
         public void SetCellColor(int xPostion, int yPosition, Color color)
         {
-            GridParams
-                .NetworkGridView[xPostion, yPosition].CellColor = color;
+            GridParams.NetworkGridView[xPostion, yPosition].CellColor = color;
         }
 
         public Bitmap GetNetworkGridAsBitmap()

@@ -25,7 +25,7 @@ namespace CohonenSOM
         {
             _cohonenNetwork.SetupNetworkWithRandoms();
             pictureBox_NetworkGridView.Image = _cohonenNetwork.GetCohonenNetworkImage();
-            MessageBox.Show(@"Network initialization finished");
+            MessageBox.Show(@"Network initialization finished", @"Notification");
 
             while (!_cohonenNetwork.RunNetworkTrainingEpoch())
             {
