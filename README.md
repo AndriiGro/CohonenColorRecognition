@@ -1,2 +1,19 @@
 # CohonenColorRecognition
-Cohonen SOM to select different colours on images
+
+Version 1:
+
+  1. loads bmp image;
+  
+  2. generates random Cohonen network;
+  
+  3. teaches network using loaded image.
+  
+
+Cohonen network searches (or isolate) similar data in data array. Version 1 works with bmp images, so network isolate similar colours. 
+
+Code based on this tutorial: [AI-Junkie] (http://www.ai-junkie.com/ann/som/som1.html), except using exponential decay function: version 1 use simple linear functions. 
+
+*Quantity of iterations is hardcoded in CohonenSOM.Services -> NetworkParameters -> IterationsQuantity.*
+
+*Better use with small images*
+
