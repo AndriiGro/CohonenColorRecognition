@@ -62,7 +62,7 @@
             // loadImageToolStripMenuItem
             // 
             this.loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
-            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.loadImageToolStripMenuItem.Text = "Load image";
             this.loadImageToolStripMenuItem.Click += new System.EventHandler(this.loadImageToolStripMenuItem_Click);
             // 
@@ -78,7 +78,7 @@
             // 
             this.teachNetworkToolStripMenuItem.Enabled = false;
             this.teachNetworkToolStripMenuItem.Name = "teachNetworkToolStripMenuItem";
-            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.teachNetworkToolStripMenuItem.Text = "Teach network";
             this.teachNetworkToolStripMenuItem.Click += new System.EventHandler(this.teachNetworkToolStripMenuItem_Click);
             // 
@@ -108,6 +108,7 @@
             this.metroLabel_IterationsDone.Size = new System.Drawing.Size(16, 19);
             this.metroLabel_IterationsDone.TabIndex = 3;
             this.metroLabel_IterationsDone.Text = "0";
+            this.metroLabel_IterationsDone.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // Main
             // 

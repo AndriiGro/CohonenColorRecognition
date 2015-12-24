@@ -23,6 +23,11 @@ namespace CohonenSOM.Services
             SetNetworkGridColors();
         }
 
+        public void ResetCohonenNetwork()
+        {
+            NetworkParameters.IterationsDone = 0;
+        }
+
         public Bitmap GetCohonenNetworkImage()
         {
             return _gridViewService.GetNetworkGridAsBitmap();
